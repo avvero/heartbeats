@@ -1,0 +1,28 @@
+{
+  "name": "heartbeat",
+  "version": "1.0",
+  "notification": {
+    "conversations": [
+      "19:ccca42f74b354387b1b606efb5d5ccef@thread.skype"
+    ]
+  },
+  "components": [
+    {
+      "name": "ci",
+      "components": [
+        {
+          "url": "http:/info",
+          "metrics": "http:/metrics",
+          "extension": {
+            "version": "info.value.info.version",
+            "name": "info.value.info.product"
+          },
+          "authorization": {
+            "login": "admin",
+            "pass": "admin"
+          }
+        }
+      ]
+    }
+  ]
+}

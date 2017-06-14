@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<body>
+<div class="babies_container">
+    <div class="page-header">
+        <h1>Hear
+            <small>your baby's heartbeat</small>
+            <code class="place pointer" ng-click="goToPlaces()">#{{rootComponent}}</code>
+        </h1>
+        <span class="connection_error" ng-if="connection.error">{{connection.error}}</span>
+        <!--<span class="last_updated">Last updated: {{ connection.lastUpdated | relativeDate}}</span>-->
+    </div>
+    <div ng-if="info.app.components.length > 0" class="babies">
+        <div class="lead pointer {{shaked == component ? 'shake' : ''}}" ng-repeat="component in info.app.components" id="component_{{component.url}}">
+            <code ng-click="setSelected(component)" class="tag url crop">{{component.url}}</code>
+            <div ng-click="setSelected(component)">{{component.app.name || component.url}}<code class="tag" ng-if="component.app.tag">{{component.app.tag}}</code></div>
+            <div class="pulse_holder {{component.error ? '': 'connected'}}" tooltip-placement="left"
+                 uib-tooltip="{{component.error ? '' : component.error}}">
+                <div class="pulse_marker">
+                    <div class="pulse_rays"></div>
+                </div>
+            </div>
+            <code class="version" ng-if="component.app.version">{{component.app.version}}</code>
+            <div ng-if="component.app.components && component.app.components.length > 0" class="components">
+                <div ng-repeat="com in component.app.components">
+                    {{com.app.name}}<code class="tag" ng-if="com.app.tag">{{com.app.tag}}</code>
+                    <code class="version" ng-if="com.app.version">{{com.app.version}}</code>
+                </div>
+            </div>
+            <div ng-if="selected == component" class="endpoints">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="{{selectedTab == 'info' ? 'active' : ''}}"><a href="" ng-click="setSelectedTab('info')">/info</a></li>
+                    <li role="presentation" ng-if="component.metrics" class="link">
+                        <a href="{{component.metrics}}" target="_blank" title="Go to graphite">
+                            <img src="img/graphite-icon-57x57.png">
+                        </a>
+                    </li>
+                    <!--<li role="presentation" ng-if="component.metrics" class="link">-->
+                        <!--<a href="http://172.16.81.155:8180/" target="_blank" title="Go to grafana">-->
+                            <!--<img src="img/grafana_icon.svg">-->
+                        <!--</a>-->
+                    <!--</li>-->
+                </ul>
+                <div class="tab-content">
+                    <div class="{{selectedTab == 'info' ? 'active' : ''}} tab-pane">
+                        <pre>{{component.original | json}}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!info.app.components || info.app.components.length == 0">
+        <p class="lead">
+            You have no any, go and create one!
+        </p>
+        <!--<p>-->
+        <!--Try to <a href="https://github.com/avvero/flow">follow instruction</a> at first-->
+        <!--</p>-->
+    </div>
+    <!--<input type="button" ng-click="updateConfiguration()">-->
+</div>
+<div class="github_link"><a href="https://github.com/avvero/flow">github</a></div>
+</body>

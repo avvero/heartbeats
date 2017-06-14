@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<body>
+<div class="babies_container">
+    <div class="page-header">
+        <h1>Hear
+            <small>your baby's heartbeat</small>
+        </h1>
+    </div>
+    <div ng-if="app.components.length > 0" class="places">
+        <p class="lead">Choose place to hear over:</p>
+        <p class="lead" ng-repeat="component in app.components">
+            <a ng-href="#listen/{{component.app.name}}">#{{component.app.name}}</a>
+        </p>
+
+    </div>
+    <div ng-if="!app.components || app.components.length == 0">
+        <p class="lead">
+            No places to hear over :(
+        </p>
+    </div>
+</div>
+</body>
