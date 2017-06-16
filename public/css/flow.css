@@ -684,7 +684,14 @@ code.place {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.tag.crop {
     width: 500px;
+}
+
+.app_name.crop {
+    width: 460px;
 }
 
 .nav>li.link>a {
