@@ -8,19 +8,11 @@
   },
   "components": [
     {
-      "name": "ci",
+      "name": "f2g",
       "components": [
         {
-          "url": "http:/info",
-          "metrics": "http:/metrics",
-          "extension": {
-            "version": "info.value.info.version",
-            "name": "info.value.info.product"
-          },
-          "authorization": {
-            "login": "admin",
-            "pass": "admin"
-          }
+          "url": "http://f2g.site/info",
+          "metrics": "http://f2g.site/metrics"                    
         }
       ]
     }
