@@ -1,6 +1,6 @@
 ### Overview
 **Problem**: Determining the version of specific components running in each environment is challenging.\
-**Solution**: A service that automatically checks the health and version information of other services, displaying the results on a web page.\
+**Solution**: A service that automatically checks the health and version information of other services and displays the results on a web page.\
 **Status**: Finished, using in company.
 
 ----
