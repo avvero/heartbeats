@@ -1,7 +1,7 @@
 ### Overview
-Problem: Managers and developers need an easy way to know which version of a specific component is running in each environment at any given time.\
-Solution: A service that automatically checks the health and version information of other services, displaying the results on a web page.\
-Status: Finished, using in company.
+**Problem**: Managers and developers need an easy way to know which version of a specific component is running in each environment at any given time.\
+**Solution**: A service that automatically checks the health and version information of other services, displaying the results on a web page.\
+**Status**: Finished, using in company.
 
 ----
 
