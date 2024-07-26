@@ -8,7 +8,7 @@
 ## Heartbeats
 A service that automatically checks the health and version information of other services and displays the results on a web page
 <div align="center">
-    <img src="assets/image.png" width="400" height="auto">
+    <img src="assets/image.png" width="600" height="auto">
 </div>
 
 ## Configuration
